@@ -74,13 +74,13 @@ model = MOFO(class_num=args.domian_num, task_prompt='word_embedding')
 # Try to load pretrained weights
 try:
     model.load_from(pretrained_path='model/cswin_small_224.pth')
-    print("✓ Loaded pretrained CSwin backbone weights")
+    print("[OK] Loaded pretrained CSwin backbone weights")
 except Exception as e:
-    print(f"⚠ Could not load pretrained weights: {e}")
+    print("[WARNING] Could not load pretrained weights")
     print("  Continuing with random initialization...")
 
-# Initialize organ embedding
-organ_embedding = torch.randn(args.domian_num, 768).to(args.device)
+# Initialize organ embedding (must be 512 dimensions for word_embedding mode)
+organ_embedding = torch.randn(args.domian_num, 512).to(args.device)
 model.organ_embedding.data = organ_embedding.float()
 model.to(args.device)
 
@@ -205,7 +205,7 @@ while args.epoch < args.max_epoch:
         os.makedirs(os.path.join('output/', args.log_name, 'saved_model/'), exist_ok=True)
         save_path = os.path.join('output/', args.log_name, 'saved_model/', f'model_epoch_{args.epoch}_dice_{best_score:.4f}.pth')
         torch.save(model.state_dict(), save_path)
-        print(f'✓ Saved best model: {save_path} (Dice: {best_score:.4f})')
+        print(f'[SAVED] Best model: {save_path} (Dice: {best_score:.4f})')
 
     args.epoch += 1
 
