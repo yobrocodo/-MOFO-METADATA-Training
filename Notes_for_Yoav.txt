@@ -1,0 +1,6 @@
+-> in order to run the model put "python run_with_cuda_patch.py infer.py" into the terminal 
+
+-> the results come out to the folder "C:\Users\yoavb\OneDrive\Documents\University\Final Project\unet\MOFO\examples\Inference"
+
+-> put desired pictures into the examples directory if you want to run the model on them
+

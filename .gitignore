@@ -160,3 +160,29 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# MOFO-specific
+# Virtual environment
+mofo-env/
+
+# Model weights (too large for GitHub)
+*.pth
+*.pth.backup
+mofo_weights/
+
+# Datasets (too large for GitHub)
+METADATA.zip
+METADATA_extracted/
+Multi-Organ Database/Dataset_METADATA/
+Multi-Organ Database/Dataset_Breast/
+Multi-Organ Database/Dataset_Thyroid/
+
+# Training outputs
+output/
+temp_mofo/
+your_project_path/
+
+# Temporary files
+explore_metadata.py
+quick_test.py
+test_metadata_setup.py

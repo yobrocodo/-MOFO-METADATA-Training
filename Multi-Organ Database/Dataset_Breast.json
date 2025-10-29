@@ -7,8 +7,7 @@
         {
             "USImage":"Train/USImage/benign (8).png",
             "Mask":"Train/Mask/benign (8).png"
-        },
-
+        }
     ],
     "Valid":[
         {
@@ -18,8 +17,7 @@
         {
             "USImage":"Valid/USImage/benign (4).png",
             "Mask":"Valid/Mask/benign (4).png"
-        },
-
+        }
     ],
     "Test":[
         {
@@ -29,6 +27,6 @@
         {
             "USImage":"Test/USImage/benign (3).png",
             "Mask":"Test/Mask/benign (3).png"
-        },
+        }
     ]
 }
